@@ -15,46 +15,18 @@
           <span class="forma_pag">2x R$ 42,10</span>
         </div>
       </div>
+      <%@products.each do |product|%>
       <div class="card">
-        <img src="imagens/chuteira_red.jpeg">
-        <h1>Chuteira Adidas</h1>
-        <span class="desconto">-30%</span>
-        <div class="container">
-          <span class="p_antigo">
-            <del>R$ 120,25</del>
-          </span>
-          <span class="p_novo">
-            R$ 84,20
-          </span>
-          <br>
-          <span class="forma_pag">2x R$ 42,10</span>
-        </div>
-      </div>
-      <div class="card">
-        <img src="imagens/chuteira_red.jpeg">
-        <h1>Chuteira Adidas</h1>
-        <span class="desconto">-30%</span>
-        <div class="container">
-          <span class="p_antigo">
-            <del>R$ 120,25</del>
-          </span>
-          <span class="p_novo">
-            R$ 84,20
-          </span>
-          <br>
-          <span class="forma_pag">2x R$ 42,10</span>
-        </div>
-      </div>
-      <div class="card">
-        <img src="imagens/BicletaCaloi.webp">
-        <h1>Bicicleta aro 29 Carbon Sports 2017</h1>
+        <%= image_tag product.image %>
+        <h1><%= product.description %></h1>
         <div class="container">
           <span class="p_novo">
-            R$ 7.599,00
+            R$ <%= product.price %>
           </span>
           <br>
-          <span class="forma_pag">10x R$ 759,90</span>
+          <span class="forma_pag">10x R$ <%= product.price/10 %></span>
         </div>
       </div>
+      <%end%>
     </div>
   </div>
