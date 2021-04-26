@@ -1,15 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>WildgaSports</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>WildgaSports</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body>
-    <%= yield %>
-  </body>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <header>
+    <%= image_tag "WILDGA_02.png" %>
+  </header>
+
+  <nav class="menu">
+    <ul class="paginas">
+      <li>
+        <%= link_to "Página Inicial", root_path, class: active("/")%>
+      </li>
+
+      <li>
+        <%= link_to "Galeria de Produtos", products_path, class: active("/products") %>
+      </li>
+      <li>
+        <%= link_to "Formulário de Contato", new_contact_path, class: active("/contacts/new") %>
+      </li>
+      <li class="direita">
+        <%= link_to "Sobre", sobre_path, class: active("/sobre") %>
+      </li>
+    </ul>
+  </nav>
+
+  <%= yield %>
+  <footer>
+    <i class="icones fab fa-facebook-square fa-3x"></i>
+    <i class="icones fab fa-instagram fa-3x"></i>
+    <i class="icones fab fa-whatsapp fa-3x"></i><br>
+    <span class="contato">(85) 99171-7122 <br></span>
+    <span class="nome">&copy; 1999-2018 WildgaSports, Inc | By Willamy Silva</span>
+  </footer>
+</body>
+
 </html>
