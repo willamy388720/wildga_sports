@@ -223,13 +223,13 @@
  
  /* INDEX */
  
- .geral #titulo{
+ .geral .titulo{
      margin-bottom: 0;
      font-size: 45px;
      text-align: center;
  }
  
- #produtos{
+ .produtos{
      /* overflow: hidden; */
      width: 100%;
      height: 100%;
@@ -239,7 +239,7 @@
      align-items: center
  }
  
- #produtos ul{
+ .produtos ul{
      list-style: none;
      position: relative;
      margin: 0;
@@ -248,7 +248,7 @@
  }
  
  @media screen and (max-width: 600px){
-     #produtos{
+     .produtos{
          display: inline;
      }
  }
@@ -257,20 +257,7 @@
  #galeria_produtos{
      text-align: center;
  }
- 
- #mostrar, #ocultar{
-     padding: 20px;
-     margin: 30px;
-     border: none;
-     font-size: 15pt;
-     background-color: black;
-     color: #fff;
-     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.4);
- }
- 
- #mostrar:hover, #ocultar:hover{
-     background-color: #e81414
- }
+
  
  /* FORMULARIO */
  fieldset{
