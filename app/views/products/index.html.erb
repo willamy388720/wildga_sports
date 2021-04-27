@@ -1,5 +1,7 @@
   <div class="geral" id="galeria_produtos">
     <div class="ofertas">
+      <%
+=begin%>
       <div class="card">
         <img src="imagens/chuteira_red.jpeg">
         <h1>Chuteira Adidas</h1>
@@ -15,9 +17,12 @@
           <span class="forma_pag">2x R$ 42,10</span>
         </div>
       </div>
+      <%
+=end%>
       <%@products.each do |product|%>
+      <%= link_to product_path(product) do %>
       <div class="card">
-        <%= image_tag product.image %>
+        <%= image_tag product.image if product.image.attached? %>
         <h1><%= product.description %></h1>
         <div class="container">
           <span class="p_novo">
@@ -27,6 +32,7 @@
           <span class="forma_pag">10x R$ <%= product.price/10 %></span>
         </div>
       </div>
+      <%end%>
       <%end%>
     </div>
   </div>

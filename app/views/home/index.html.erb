@@ -1,57 +1,25 @@
 <div class="geral">
   <h1 id="titulo">Promoções</h1>
   <div id="produtos">
+    <% @promotions.each do |promo| %>
     <ul>
       <li>
         <div class="card">
-          <img src="imagens/chuteira_red.jpeg">
-          <h1>Chuteira Adidas</h1>
+          <%= image_tag promo.image if promo.image.attached? %>
+          <h1><%= promo.description %></h1>
           <span class="desconto">-30%</span>
           <div class="container">
             <span class="p_antigo">
-              <del>R$ 120,25</del>
+              <del>R$ <%= promo.price %></del>
             </span>
             <span class="p_novo">
-              R$ 84,20
+              R$ <%= promo.price %>
             </span><br>
-            <span class="forma_pag">2x R$ 42,10</span>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="card">
-          <img src="imagens/chuteira_red.jpeg">
-          <h1>Chuteira Adidas</h1>
-          <span class="desconto">-30%</span>
-          <div class="container">
-            <span class="p_antigo">
-              <del>R$ 120,25</del>
-            </span>
-            <span class="p_novo">
-              R$ 84,20
-            </span>
-            <br>
-            <span class="forma_pag">2x R$ 42,10</span>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="card">
-          <img src="imagens/chuteira_red.jpeg">
-          <h1>Chuteira Adidas</h1>
-          <span class="desconto">-30%</span>
-          <div class="container">
-            <span class="p_antigo">
-              <del>R$ 120,25</del>
-            </span>
-            <span class="p_novo">
-              R$ 84,20
-            </span>
-            <br>
-            <span class="forma_pag">2x R$ 42,10</span>
+            <span class="forma_pag">2x <%= promo.price/2 %></span>
           </div>
         </div>
       </li>
     </ul>
+    <% end %>
   </div>
 </div>
