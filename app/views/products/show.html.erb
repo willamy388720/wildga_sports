@@ -9,12 +9,14 @@
     <div class="col about">
       <p class="text-wrap">
         <%= @product.about %><br />
+        <%if @product.promotion%>
         <span class="p_antigo">
           <del>R$ <%= @product.price %></del>
         </span>
+        <%end%>
         <span class="font-weight-bold my-3">R$ <%= @product.price %></span>
       <div class="container-button">
-        <%= link_to "Editar", "#", class:"btn btn-primary" %>
+        <%= link_to "Editar", edit_product_path(@product), class:"btn btn-primary" %>
         <%= link_to "Comprar", "#", class:"btn btn-success" %>
       </div>
       </p>

@@ -57,6 +57,7 @@ GEM
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
     ast (2.4.2)
+    awesome_print (1.8.0)
     bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.7.4)
@@ -242,6 +243,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   bootsnap (>= 1.4.2)
   byebug
   devise

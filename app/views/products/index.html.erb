@@ -19,6 +19,7 @@
       </div>
       <%
 =end%>
+      <% unless @products.nil?%>
       <%@products.each do |product|%>
       <%= link_to product_path(product) do %>
       <div class="card">
@@ -32,6 +33,7 @@
           <span class="forma_pag">10x R$ <%= product.price/10 %></span>
         </div>
       </div>
+      <%end%>
       <%end%>
       <%end%>
     </div>
