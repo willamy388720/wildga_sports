@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[show edit update]
 
   def index
-    @products = Product.all
+    @products = Product.with_attached_image.all
   end
 
   def show; end
@@ -35,7 +35,7 @@ class ProductsController < ApplicationController
   private
 
   def set_product
-    @product = Product.find(params[:id])
+    @product = Product.with_attached_image.find(params[:id])
   end
 
   def params_product
