@@ -8,9 +8,9 @@
 
 20.times do
   Product.create!(
-    description: Faker::Commerce.product_name,
+    product_name: Faker::Commerce.product_name,
     price: Faker::Commerce.price,
-    about: Faker::Lorem.paragraph(sentence_count: (1..5).to_a.sample)
+    description: Faker::Lorem.paragraph(sentence_count: (1..5).to_a.sample)
   )
 end
 

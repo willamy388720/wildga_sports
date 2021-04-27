@@ -3,12 +3,12 @@
     <div class="col">
       <%= image_tag @product.image %><br />
       <p class="font-weight-bold text-center" style="font-size: 20pt;">
-        <%= @product.description %>
+        <%= @product.product_name %>
       </p>
     </div>
     <div class="col about">
       <p class="text-wrap">
-        <%= @product.about %><br />
+        <%= @product.description %><br />
         <%if @product.promotion%>
         <span class="p_antigo">
           <del>R$ <%= @product.price %></del>

@@ -1,31 +1,20 @@
   <div class="geral" id="galeria_produtos">
     <div class="ofertas">
-      <%
-=begin%>
-      <div class="card">
-        <img src="imagens/chuteira_red.jpeg">
-        <h1>Chuteira Adidas</h1>
-        <span class="desconto">-30%</span>
-        <div class="container">
-          <span class="p_antigo">
-            <del>R$ 120,25</del>
-          </span>
-          <span class="p_novo">
-            R$ 84,20
-          </span>
-          <br>
-          <span class="forma_pag">2x R$ 42,10</span>
-        </div>
-      </div>
-      <%
-=end%>
       <% unless @products.nil?%>
       <%@products.each do |product|%>
       <%= link_to product_path(product) do %>
       <div class="card">
         <%= image_tag product.image if product.image.attached? %>
-        <h1><%= product.description %></h1>
+        <h1><%= product.product_name %></h1>
+        <%if product.promotion %>
+        <span class="desconto"><%= "-#{product.percent_promotion}%" %></span>
+        <%end%>
         <div class="container">
+          <%if product.promotion %>
+          <span class="p_antigo">
+            <del>R$ <%= product.price %></del>
+          </span>
+          <%end%>
           <span class="p_novo">
             R$ <%= product.price %>
           </span>

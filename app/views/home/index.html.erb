@@ -1,25 +1,35 @@
 <div class="geral">
-  <h1 id="titulo">Promoções</h1>
+  <% unless @promotions == [] %>
+  <h1 id="titulo">Novas Promoções</h1>
   <div id="produtos">
     <% @promotions.each do |promo| %>
     <ul>
       <li>
+        <%= link_to product_path(promo) do %>
         <div class="card">
           <%= image_tag promo.image if promo.image.attached? %>
-          <h1><%= promo.description %></h1>
-          <span class="desconto">-30%</span>
+          <h1><%= promo.product_name %></h1>
+          <%if promo.promotion %>
+          <span class="desconto"><%= "-#{promo.percent_promotion}%" %></span>
+          <%end%>
           <div class="container">
+            <%if promo.promotion %>
             <span class="p_antigo">
               <del>R$ <%= promo.price %></del>
             </span>
+            <%end%>
             <span class="p_novo">
               R$ <%= promo.price %>
             </span><br>
             <span class="forma_pag">2x <%= promo.price/2 %></span>
           </div>
         </div>
+        <% end %>
       </li>
     </ul>
     <% end %>
   </div>
+  <% else %>
+  <h1 id="titulo">Sem Novas Promoções</h1>
+  <% end %>
 </div>

@@ -15,7 +15,7 @@ class ProductService
 
     @product.update(
       promotion: true,
-      pecent_promotion: percent_promotion.round(2)
+      percent_promotion: percent_promotion.round(2)
     )
   end
 

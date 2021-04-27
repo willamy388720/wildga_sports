@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @promotions = Product.where(id: [1,2,3])
+    @promotions = Product.news_promotions
   end
 end

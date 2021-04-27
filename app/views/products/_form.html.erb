@@ -2,14 +2,18 @@
 
   <%= form_with model: @product do |f| %>
   <fieldset>
-    <%= f.label :description %>
-    <%= f.text_field :description, class: "entrada", placeholder:"Descrição do Produto", autofocus: true %><br>
+    <%= f.label :product_name %>
+    <%= f.text_field :product_name, class: "entrada", placeholder:"Descrição do Produto", autofocus: true %><br>
+
     <%= f.label :price %>
     <%= f.number_field :price, step: :any, class: "entrada", placeholder:"Valor do Produto", autofocus: true %><br>
-    <%= f.label :about %>
-    <%= f.text_area :about, id:"msg", cols:"56", rows:"5", maxlength:"255", placeholder:"Digite Sua Mensagem..."%>
+
+    <%= f.label :description %>
+    <%= f.text_area :description, id:"msg", cols:"56", rows:"5", maxlength:"255", placeholder:"Digite Sua Mensagem..."%>
+
     <%= f.label :image %><br>
     <%= f.file_field :image, class:"form-control-file" %>
+
     <%= f.submit "Enviar", id:"enviar"%>
   </fieldset>
   <% end %>
