@@ -16,8 +16,9 @@
         <%end%>
         <span class="font-weight-bold my-3">R$ <%= @product.price %></span>
       <div class="container-button">
-        <%= link_to "Editar", edit_product_path(@product), class:"btn btn-primary" %>
         <%= link_to "Comprar", "#", class:"btn btn-success" %>
+        <%= link_to "Editar", edit_product_path(@product), class:"btn btn-primary" %>
+        <%= link_to "Excluir", product_path(@product), class:"btn btn-danger", data: {confirm:"Tem certeza que dejesa excluir #{@product.product_name}?"}, method: :delete %>
       </div>
       </p>
     </div>
