@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[show edit update]
 
   def index
-    @products = Product.with_attached_image.all
+    @pagy, @products = pagy(Product.with_attached_image.order(updated_at: :desc), items: 10)
   end
 
   def show; end

@@ -109,6 +109,7 @@ GEM
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pagy (3.5.0)
     parallel (1.20.1)
     parser (3.0.1.0)
       ast (~> 2.4.1)
@@ -252,6 +253,7 @@ DEPENDENCIES
   figaro
   jbuilder (~> 2.7)
   listen (~> 3.2)
+  pagy (<= 3.5)
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.6)
