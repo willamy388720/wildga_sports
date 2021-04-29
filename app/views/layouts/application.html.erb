@@ -31,7 +31,12 @@
         <%= link_to "Sobre", sobre_path, class: active("/sobre") %>
       </li>
       <li class="direita">
-        <%= link_to "Entrar", "#" %>
+        <% unless user_signed_in? %>
+        <%= link_to "Entrar", new_user_session_path %>
+        <% else %>
+        <span><%= "Bem-vindo #{current_user.email}," %></span>
+        <%= link_to "Sair", destroy_user_session_path, method: :delete %>
+        <% end %>
       </li>
     </ul>
   </nav>

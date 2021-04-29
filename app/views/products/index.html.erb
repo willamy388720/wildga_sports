@@ -1,5 +1,7 @@
   <div class="geral" id="galeria_produtos">
+    <% if admin_signed_in? %>
     <%= link_to "Adiconar novo produto", new_product_path, class:"btn btn-success"%>
+    <% end %>
     <div class="ofertas">
       <% unless @products.nil?%>
       <%@products.each do |product|%>

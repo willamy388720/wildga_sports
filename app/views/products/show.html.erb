@@ -1,6 +1,6 @@
-<div class="geral container-fluid">
-  <div class="row" style="width: 60%;">
-    <div class=" col">
+<div class="geral">
+  <div class="row" style="width: 50%;">
+    <div class="col">
       <%= image_tag @product.image %><br />
       <p class="font-weight-bold text-center" style="font-size: 20pt;">
         <%= @product.product_name %>
@@ -16,9 +16,12 @@
         <%end%>
         <span class="font-weight-bold my-3">R$ <%= @product.price %></span>
       <div class="container-button">
+        <% unless admin_signed_in? %>
         <%= link_to "Comprar", "#", class:"btn btn-success" %>
+        <% else %>
         <%= link_to "Editar", edit_product_path(@product), class:"btn btn-primary" %>
         <%= link_to "Excluir", product_path(@product), class:"btn btn-danger", data: {confirm:"Tem certeza que dejesa excluir #{@product.product_name}?"}, method: :delete %>
+        <% end %>
       </div>
       </p>
     </div>
