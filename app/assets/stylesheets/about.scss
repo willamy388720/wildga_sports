@@ -1,3 +1,37 @@
 // Place all the styles related to the About controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+/* SOBRE */
+ 
+ /* TEXTO */
+ .sobre{
+  text-align: center;
+}
+
+#logo img{
+  width: 30%;
+  opacity: 0.7; 
+}
+
+.titulo-texto{
+  font-size: 25px;
+}
+
+container{
+  text-align: justify;
+  line-height: 1.8em;
+}
+
+.paragrafo{
+  font-size: 18px;
+  text-indent: 3.5em;
+}
+
+@media screen and (max-width: 600px){
+  #logo img{
+      width: 100%;
+  }
+  container h1{
+      text-align: left;
+  }
+}

@@ -1,0 +1,110 @@
+/* CARDS */
+.card {
+  border: solid 1px rgba(0, 0, 0, 0.2);
+  width: 235px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  font-size: 13pt;
+  display: inline-block;
+  margin: 30px;
+  position: relative;
+  padding: 50px 25px 25px 25px;
+}
+
+.card img{
+  width: 100%;
+}
+
+.card .container{
+  border-top: solid 1px rgba(0, 0, 0, 0.2);
+  padding: 2px 16px;
+  display: block;
+  text-align: center;
+}
+
+.p_antigo{
+  color: red;
+  font-size: 9pt;
+  text-align: right;
+}
+
+.forma_pag {
+  color: black;
+}
+
+.p_novo{
+  color: black;
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+.card h1 {
+background: #222;
+color: #fff;
+margin: 0;
+padding: 10px 0;
+text-align: center;
+font-size: 18px;
+position: absolute;
+left: -15px;
+right: -15px;
+top: 15px;
+}
+
+.card h1:after,
+.card h1:before {
+display: block;
+position: absolute;
+width: 0;
+height: 0;
+content: "";
+top: 100%;
+border-style: solid;
+border-color: transparent;
+}
+
+.card h1:before {
+left: 0;
+border-width: 0 15px 5px 0;
+border-right-color: #444;
+}
+
+.card h1:after {
+border-width: 5px 15px 0 0;
+border-top-color: #444;
+right: 0;
+}
+
+.desconto{
+  position: absolute;
+  background-color: #e81414;
+  padding: 10px 7px 10px 25px;
+  color: #fff;
+  top: 80px;
+  right: -15px;
+}
+
+.desconto::after{
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  content: "";
+  top: 100%;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 5px 15px 0 0;
+  border-top-color: #af1414;
+  right: 0;
+}
+@media screen and (max-width: 600px){
+  .card{
+      top: 0px;
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+  }
+  .geral{
+      text-align: center;
+  }
+}

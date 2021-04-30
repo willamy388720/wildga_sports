@@ -1,0 +1,53 @@
+ /* FORMULARIO */
+ fieldset{
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 15pt;
+  box-shadow: 0 3px 10px 3px rgba(0, 0, 0, 0.3);
+  border: none;
+  position: relative;
+  padding: 20px;
+}
+.entrada{
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  font-size: 15pt;
+}
+
+#msg{
+  width: 100%;
+  padding: 10px;
+  resize: none;
+  font-size: 15pt;
+  box-sizing: border-box;
+}
+
+#enviar{
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  margin: 30px;
+  border: none;
+  font-size: 15pt;
+  background-color: black;
+  color: #fff;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.4);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#enviar:hover{
+  background-color: #e81414;
+}
+
+.ui-tooltip{
+  background-color: #e81414;
+}
+@media screen and (max-width: 600px){
+  fieldset{
+      width: 100%;
+  }
+}

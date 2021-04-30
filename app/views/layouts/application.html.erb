@@ -11,43 +11,67 @@
 </head>
 
 <body>
-  <header>
-    <%= image_tag "WILDGA_02.png" %>
-  </header>
 
-  <nav class="menu">
-    <ul class="paginas">
-      <li>
-        <%= link_to "Página Inicial", root_path, class: active("/")%>
-      </li>
+  <!--Navbar-->
+  <nav class="navbar navbar-light dark light-blue lighten-4">
 
-      <li>
-        <%= link_to "Galeria de Produtos", products_path, class: active("/products") %>
-      </li>
-      <li>
-        <%= link_to "Formulário de Contato", new_contact_path, class: active("/contacts/new") %>
-      </li>
-      <li>
-        <%= link_to "Sobre", sobre_path, class: active("/sobre") %>
-      </li>
-      <li class="direita">
-        <% unless user_signed_in? || admin_signed_in?%>
+    <!-- Navbar brand -->
+    <%= link_to root_path, class:"navbar-brand" do %>
+    <%= image_tag "WILDGA_02.png", style:"width: 30%;" %>
+    <% end %>
 
-        <%= link_to "Entrar", new_user_session_path %>
+    <div class="justify-content-end">
 
-        <% else%>
+      <% unless user_signed_in? || admin_signed_in?%>
 
-        <% if admin_signed_in? %>
-        <%= link_to "Sair", destroy_admin_session_path, method: :delete %>
-        <% else%>
-        <span><%= "Bem-vindo #{current_user.email}," %></span>
-        <%= link_to "Sair", destroy_user_session_path, method: :delete %>
-        <% end %>
+      <%= link_to "Entrar", new_user_session_path, class: "texto" %>
 
-        <% end %>
-      </li>
-    </ul>
+      <% else%>
+
+      <% if admin_signed_in? %>
+      <%= link_to "Sair", destroy_admin_session_path, method: :delete %>
+      <% else%>
+      <span><%= "Bem-vindo #{current_user.email}," %></span>
+      <%= link_to "Sair", destroy_user_session_path, method: :delete %>
+      <% end %>
+
+      <% end %>
+
+      <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1">
+        <span class="btn-menu">
+          <i class="fas fa-bars fa-1x"></i>
+        </span>
+      </button>
+
+    </div>
+    <!-- Collapse button -->
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item item <%= active("/") %>">
+          <%= link_to "Página Inicial", root_path, class: "texto"%>
+        </li>
+        <li class="nav-item item <%= active("/products") %>">
+          <%= link_to "Galeria de Produtos", products_path, class: "texto" %>
+        </li>
+        <li class="nav-item item <%= active("/contacts/new") %>">
+          <%= link_to "Formulário de Contato", new_contact_path, class: "texto" %>
+        </li>
+        <li class="nav-item item <%= active("/sobre") %>">
+          <%= link_to "Sobre", sobre_path, class: "texto" %>
+        </li>
+      </ul>
+      <!-- Links -->
+
+    </div>
+    <!-- Collapsible content -->
+
   </nav>
+  <!--/.Navbar-->
+
 
   <%= yield %>
   <footer>

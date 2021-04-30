@@ -1,0 +1,22 @@
+ .produtos{
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.produtos ul{
+  list-style: none;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: flex;   
+}
+
+@media screen and (max-width: 600px){
+  .produtos{
+      display: inline;
+  }
+}
