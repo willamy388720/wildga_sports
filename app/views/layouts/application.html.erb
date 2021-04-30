@@ -22,6 +22,18 @@
 
     <div class="justify-content-end">
 
+      <span class="dropdown mr-3">
+        <span style="color: white;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-shopping-cart car"></i>
+          <span class="badge badge-pill badge-danger qtd-buy">1</span>
+        </span>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to "Perfil", "#", class:"dropdown-item" %>
+          <div class="dropdown-divider"></div>
+          <%= link_to "Perfil", "#", class:"dropdown-item" %>
+        </div>
+      </span>
+
       <% unless user_signed_in? || admin_signed_in?%>
 
       <%= link_to "Entrar", new_user_session_path, class: "texto" %>
@@ -31,8 +43,17 @@
       <% if admin_signed_in? %>
       <%= link_to "Sair", destroy_admin_session_path, method: :delete %>
       <% else%>
-      <span><%= "Bem-vindo #{current_user.email}," %></span>
-      <%= link_to "Sair", destroy_user_session_path, method: :delete %>
+      <span class="dropdown">
+        <span class="dropdown-toggle" style="color: white;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= current_user.email %>
+        </span>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to "Perfil", "#", class:"dropdown-item" %>
+          <%= link_to "Histórico", "#", class:"dropdown-item" %>
+          <div class="dropdown-divider"></div>
+          <%= link_to "Sair", destroy_user_session_path, class:"dropdown-item", method: :delete %>
+        </div>
+      </span>
       <% end %>
 
       <% end %>
